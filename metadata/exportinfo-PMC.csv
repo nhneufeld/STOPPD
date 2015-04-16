@@ -1,0 +1,14 @@
+pattern    tag         export_mnc  export_nii  export_nrrd  count
+localizer  ?           no          no          no           *
+MPRAGE     T1          no          yes         no           1
+60.5$      DTI60-1000  no          yes         no           3
+60.5.      ?           no          no          no           3
+pd.t2      PDT2        no          yes         no           *
+flair      FLAIR       no          yes         no           1
+rest       RST         no          yes         no           1
+MoCo       ?           no          no          no           *
+Design     ?           no          no          no           *
+EvaSeries  ?           no          no          no           *
+Mean       ?           no          no          no           *
+field      FMAP        no          yes         no           1
+svs.se     ?           no          no          no           1

@@ -2,7 +2,7 @@ pattern      tag         export_mnc  export_nii  export_nrrd  count
 SmartBrain   ?           no          no          no           *
 Patient      ?           no          no          no           *
 ^MPRAGE$     T1          no          yes         no           *
-TSE          PDT2        no          yes         no           1
+TSE          PD          no          yes         no           1
 ^DTI.60dir$  DTI60-1000  no          yes         no           3
 SENSE        ?           no          no          no           3
 FLAIR        FLAIR       no          yes         no           1

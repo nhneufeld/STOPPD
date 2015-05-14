@@ -11,7 +11,7 @@
 
 STUDYNAME=STOPPD      # Data archive study name
 XNAT_PROJECT=STOPPD01 # XNAT project name
-MRUSER=STOPPD01       # MR Unit FTP user
+MRUSER=STOP           # MR Unit FTP user
 PROJECTDIR=/archive/data-2.0/${STUDYNAME}
 XNAT_ARCHIVE_CMH=/mnt/xnat/spred/archive/STOPPD01/arc001
 XNAT_ARCHIVE_MAS=/mnt/xnat/spred/archive/STOPPD02/arc001
@@ -34,7 +34,7 @@ function message () { [[ "$args" =~ "--quiet" ]] || echo "$(date): $1"; }
   message "Running pipelines for study: $STUDYNAME"
 
   message "Get new scans..."
-  dm-sftp-sync.sh ${MRUSER}@mrftp.camphpet.ca "${MRUSER}*MR/*" ${PROJECTDIR}/data/zips
+  dm-sftp-sync.sh ${MRUSER}@mrftp.camhpet.ca "${MRUSER}*MR/*" ${PROJECTDIR}/data/zips
 
   message "Link scans..."
   link.py \

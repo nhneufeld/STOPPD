@@ -89,7 +89,7 @@ function message () { [[ "$args" =~ "--quiet" ]] || echo "$(date): $1"; }
 
   message "Split the PDT2 images..."
   (module load FSL/5.0.7
-   dm-proc-split-pdt2.py data/nii/*/*_PDT2_*.nii.gz
+   dm-proc-split-pdt2.py ${PROJECTDIR}/data/nii/*/*_PDT2_*.nii.gz
   )
 
   message "Generating QC documents..."

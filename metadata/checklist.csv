@@ -123,5 +123,6 @@ qc_STOPPD_CMH_410030_02.pdf jdv
 qc_STOPPD_PMC_310051_01.pdf jdv 
 qc_STOPPD_PMC_320032_02.pdf jdv 
 qc_STOPPD_MAS_210030_02.pdf jdv -- duplicate?? 
-qc_STOPPD_MAS_210036_01.pdf 
-qc_STOPPD_MAS_260005_01.pdf 
+qc_STOPPD_MAS_210036_01.pdf jdv -- b0 intensities high near hippocampus / temporal lobes 
+qc_STOPPD_MAS_260005_01.pdf jdv -- b0 intensities high near hippocampus / temporal lobes
+

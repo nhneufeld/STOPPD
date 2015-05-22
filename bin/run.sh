@@ -1,4 +1,4 @@
-#!/bin/bash --login
+#!/bin/bash
 # Runs pipelines like a bro
 #
 # Usage:
@@ -25,6 +25,7 @@ PMC_STANDARD=${PROJECTDIR}/gold_standards/PMC
 args="$@"                           # commence ugly opt handling
 DATESTAMP=$(date +%Y%m%d)
 
+source /etc/profile
 module load /archive/data-2.0/code/datman.module
 export PATH=$PATH:${PROJECTDIR}/bin
 
@@ -109,22 +110,22 @@ function message () { [[ "$args" =~ "--quiet" ]] || echo "$(date): $1"; }
     git push  # --quiet for quietness
   ) 
 
-  message "Running freesurfer..."
-  dm-proc-freesurfer.py ${PROJECTDIR}
+  # message "Running freesurfer..."
+  # dm-proc-freesurfer.py ${PROJECTDIR}
 
 
-  message "Running resting state analysis..."
-  dm-proc-rest.py \
-    ${PROJECTDIR} \
-    /scratch/clevis/ \
-    /archive/data-2.0/code/datman/assets/150409-compcor-nonlin-8fwhm.sh
+  # message "Running resting state analysis..."
+  # dm-proc-rest.py \
+  #   ${PROJECTDIR} \
+  #   /scratch/clevis/ \
+  #   /archive/data-2.0/code/datman/assets/150409-compcor-nonlin-8fwhm.sh
 
-  message "Running dtifit..."
-  module load FSL/5.0.7
-  dm-proc-dtifit.py \
-    --datadir ${PROJECTDIR}/data/ \
-    --outputdir ${PROJECTDIR}/data/dtifit
-  module unload FSL/5.0.7
+  # message "Running dtifit..."
+  # module load FSL/5.0.7
+  # dm-proc-dtifit.py \
+  #   --datadir ${PROJECTDIR}/data/ \
+  #   --outputdir ${PROJECTDIR}/data/dtifit
+  # module unload FSL/5.0.7
 
   message "Done."
 } | tee -a ${PROJECTDIR}/logs/run-all-${DATESTAMP}.log

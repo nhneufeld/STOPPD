@@ -1,10 +1,14 @@
-pattern      tag         export_mnc  export_nii  export_nrrd  count
-SmartBrain   ?           no          no          no           *
-Patient      ?           no          no          no           *
-^MPRAGE$     T1          no          yes         no           *
-TSE          PD          no          yes         no           1
-^DTI.60dir$  DTI60-1000  no          yes         no           3
-SENSE        ?           no          no          no           3
-FLAIR        FLAIR       no          yes         no           1
-(?i)Rest     RST         no          yes         no           1
-B0-Map       FMAP        no          yes         no           1
+pattern                         tag         export_mnc  export_nii  export_nrrd  export_dcm  count
+SmartBrain                      ?           no          no          no           no          *
+Patient                         ?           no          no          no           no          *
+^MPRAGE$                        T1          no          yes         no           no          *
+TSE                             PD          no          yes         no           yes         1
+^DTI.60dir$                     DTI60-1000  no          yes         no           yes         3
+SENSE                           ?           no          no          no           no          3
+FLAIR                           FLAIR       no          yes         no           yes         1
+(?i)Rest                        RST         no          yes         no           yes         1
+B0-Map                          FMAP        no          yes         no           yes         1
+Ref.HC.8                        ?           no          no          no           no          *
+Rothschild.S260005S01.05152015  ?           no          no          no           no          *
+SV.LTDIPFC                      ?           no          no          no           no          *
+SV.SACC                         ?           no          no          no           no          *

@@ -1,10 +1,10 @@
-pattern    tag         export_mnc  export_nii  export_nrrd  count
-Localizer  ?           no          no          no           *
-mprage     T1          no          yes         no           *
-pd.t2      PDT2        no          yes         no           *
-60.5$      DTI60-1000  no          yes         no           3
-60.5.      ?           no          no          no           3
-field      FMAP        no          yes         no           1
-rest       RST         no          yes         no           1
-flair      FLAIR       no          yes         no           1
-svs.se     ?           no          no          no           1
+pattern    tag         export_mnc  export_nii  export_nrrd  export_dcm  count
+Localizer  ?           no          no          no           no          *
+mprage     T1          no          yes         no           no          *
+pd.t2      PDT2        no          yes         no           yes         *
+60.5$      DTI60-1000  no          yes         no           yes         3
+60.5.      ?           no          no          no           no          3
+field      FMAP        no          yes         no           yes         1
+rest       RST         no          yes         no           yes         1
+flair      FLAIR       no          yes         no           yes         1
+svs.se     ?           no          no          no           no          1

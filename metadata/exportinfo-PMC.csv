@@ -1,14 +1,21 @@
-pattern    tag         export_mnc  export_nii  export_nrrd  count
-localizer  ?           no          no          no           *
-MPRAGE     T1          no          yes         no           1
-60.5$      DTI60-1000  no          yes         no           3
-60.5.      ?           no          no          no           3
-pd.t2      PDT2        no          yes         no           *
-flair      FLAIR       no          yes         no           1
-rest       RST         no          yes         no           1
-MoCo       ?           no          no          no           *
-Design     ?           no          no          no           *
-EvaSeries  ?           no          no          no           *
-Mean       ?           no          no          no           *
-field      FMAP        no          yes         no           1
-svs.se     ?           no          no          no           1
+pattern           tag         export_mnc  export_nii  export_nrrd  export_dcm  count
+localizer         ?           no          no          no           no          *
+MPRAGE            T1          no          yes         no           yes         1
+60.5$             DTI60-1000  no          yes         no           yes         3
+60.5.             ?           no          no          no           yes         3
+pd.t2             PDT2        no          yes         no           yes         *
+flair             FLAIR       no          yes         no           yes         1
+rest              RST         no          yes         no           yes         1
+MoCo              ?           no          no          no           no          *
+Design            ?           no          no          no           no          *
+EvaSeries         ?           no          no          no           no          *
+Mean              ?           no          no          no           no          *
+field             FMAP        no          yes         no           yes         1
+svs.se            ?           no          no          no           no          1
+dti.60.8          ?           no          no          no           no          1
+dti.60.8.ADC      ?           no          no          no           no          1
+dti.60.8.ColFA    ?           no          no          no           no          1
+dti.60.8.FA       ?           no          no          no           no          1
+dti.60.8.TENSOR   ?           no          no          no           no          1
+dti.60.8.TRACEW   ?           no          no          no           no          1
+PhoenixZIPReport  ?           no          no          no           no          1

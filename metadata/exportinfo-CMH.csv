@@ -1,22 +1,44 @@
-pattern        tag         export_mnc  export_nii  export_nrrd  count
-DTI-60         DTI60-1000  no          yes         no           3
-TE6.5          FMAP-6.5    no          yes         no           1
-TE8.5          FMAP-8.5    no          yes         no           1
-T1             T1          no          yes         no           1
-T2.DE          PDT2        no          yes         no           1
-FLAIR          FLAIR       no          yes         no           1
-Loc            LOC         no          no          no           1
-Cal            CAL         no          no          no           1
-Aniso          ANI         no          no          no           1
-HOS            HOS         no          no          no           1
-MRS.*DLPFC     MRS-DLPFC   no          yes         no           *
-MRS.*sgACC     MRS-sgACC   no          yes         no           *
-(?i)screen     ?           no          no          no           *
-(?i)save       ?           no          no          no           *
-(?i)volume     ?           no          no          no           *
-(?i)processed  ?           no          no          no           *
-(?i)^acc$      ?           no          no          no           *
-(?i)average    ?           no          no          no           *
-(?i)ax$        ?           no          no          no           *
-(?i)cor$       ?           no          no          no           *
-(?i)co$        ?           no          no          no           *
+pattern         tag         export_mnc  export_nii  export_nrrd  export_dcm  count
+DTI-60          DTI60-1000  no          yes         no           yes         3
+TE6.5           FMAP-6.5    no          yes         no           yes         1
+TE8.5           FMAP-8.5    no          yes         no           yes         1
+T1              T1          no          yes         no           yes         1
+T2.DE           PDT2        no          yes         no           yes         1
+FLAIR           FLAIR       no          yes         no           yes         1
+Loc             LOC         no          no          no           no          1
+Cal             CAL         no          no          no           no          1
+Aniso           ANI         no          no          no           no          1
+HOS             HOS         no          no          no           no          1
+MRS.*DLPFC      MRS-DLPFC   no          yes         no           no          *
+MRS.*sgACC      MRS-sgACC   no          yes         no           no          *
+(?i)^LT.DLPFC$  ?           no          no          no           no          *
+(?i)LTDC        ?           no          no          no           no          *
+(?i)LT.dC       ?           no          no          no           no          *
+Isotropic       ?           no          no          no           no          *
+^Ax.SWAN$       ?           no          no          no           no          *
+(?i)screen      ?           no          no          no           no          *
+(?i)save        ?           no          no          no           no          *
+(?i)volume      ?           no          no          no           no          *
+(?i)processed   ?           no          no          no           no          *
+(?i)^acc$       ?           no          no          no           no          *
+(?i)^sacc$      ?           no          no          no           no          *
+(?i)^dc$        ?           no          no          no           no          *
+(?i)average     ?           no          no          no           no          *
+(?i)^ax$        ?           no          no          no           no          *
+^ax.$           ?           no          no          no           no          *
+(?i)^cor?$      ?           no          no          no           no          *
+(?i)^sag.2$     ?           no          no          no           no          *
+(?i)^sag$       ?           no          no          no           no          *
+(?i)^sagcc$     ?           no          no          no           no          *
+(?i)^sgcc$      ?           no          no          no           no          *
+(?i)^sgacc$     ?           no          no          no           no          *
+(?i)^sacc$      ?           no          no          no           no          *
+(?i)^sacc.$     ?           no          no          no           no          *
+(?i)^accc$      ?           no          no          no           no          *
+(?i)^AXCOR$     ?           no          no          no           no          *
+Reformat        ?           no          no          no           no          *
+^SG.ACC         ?           no          no          no           no          *
+^rtdl           ?           no          no          no           no          *
+^AXA$           ?           no          no          no           no          *
+^C$             ?           no          no          no           no          *
+^DLPFC$         ?           no          no          no           no          *

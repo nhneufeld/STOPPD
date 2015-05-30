@@ -107,7 +107,7 @@ function message () { [[ "$args" =~ "--quiet" ]] || echo "$(date): $1"; }
     git add qc/
     git add metadata/checklist.csv
     git diff --quiet HEAD || git commit -m "Autoupdating QC documents"
-    git push  # --quiet for quietness
+    git push --quiet
   ) 
 
   # message "Running freesurfer..."

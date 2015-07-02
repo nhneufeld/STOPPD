@@ -11,7 +11,7 @@ Aniso           ANI         no          no          no           no          1
 HOS             HOS         no          no          no           no          1
 MRS.*DLPFC      MRS-DLPFC   no          yes         no           no          *
 MRS.*sgACC      MRS-sgACC   no          yes         no           no          *
-(?i)^LT.DLPFC$  ?           no          no          no           no          *
+(?i)LT.DLPFC    ?           no          no          no           no          *
 (?i)LTDC        ?           no          no          no           no          *
 (?i)LT.dC       ?           no          no          no           no          *
 Isotropic       ?           no          no          no           no          *
@@ -26,6 +26,8 @@ Isotropic       ?           no          no          no           no          *
 (?i)average     ?           no          no          no           no          *
 (?i)^ax$        ?           no          no          no           no          *
 ^ax.$           ?           no          no          no           no          *
+^ss$            ?           no          no          no           no          *
+^OBACC$         ?           no          no          no           no          *
 (?i)^cor?$      ?           no          no          no           no          *
 (?i)^sag.2$     ?           no          no          no           no          *
 (?i)^sag$       ?           no          no          no           no          *

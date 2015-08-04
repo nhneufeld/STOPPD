@@ -141,5 +141,5 @@ qc_STOPPD_MAS_260012_01.pdf jdv
 qc_STOPPD_MAS_260013_01.pdf jdv
 qc_STOPPD_PMC_360004_01.pdf jdv
 qc_STOPPD_CMH_460005_01.pdf jdv 
-qc_STOPPD_CMH_460006_01.pdf 
-qc_STOPPD_NKI_160001_01.pdf 
+qc_STOPPD_CMH_460006_01.pdf jdv 
+qc_STOPPD_NKI_160001_01.pdf jdv -- qc document fails to render because .bvec and bval not output, but data is OK...

@@ -43,6 +43,9 @@ function message () { [[ "$args" =~ "--quiet" ]] || echo "$(date): $1"; }
     ${PROJECTDIR}/data/dicom/ \
     ${PROJECTDIR}/data/zips/*.zip
 
+  message "Link spiral scans..."
+  dm-link-sprl.sh ${PROJECTDIR}/data
+
   message "Uploading new scans to XNAT..."
   dm-xnat-upload.sh \
     ${XNAT_PROJECT} \
@@ -55,31 +58,31 @@ function message () { [[ "$args" =~ "--quiet" ]] || echo "$(date): $1"; }
   xnat-extract.py \
     --blacklist ${PROJECTDIR}/metadata/blacklist.csv \
     --datadir ${PROJECTDIR}/data \
-    --exportinfo ${PROJECTDIR}/metadata/exportinfo-CMH.csv \
+    --exportinfo ${PROJECTDIR}/metadata/exportinfo.csv \
     ${XNAT_ARCHIVE_CMH}/*
 
   xnat-extract.py \
     --blacklist ${PROJECTDIR}/metadata/blacklist.csv \
     --datadir ${PROJECTDIR}/data \
-    --exportinfo ${PROJECTDIR}/metadata/exportinfo-MAS.csv \
+    --exportinfo ${PROJECTDIR}/metadata/exportinfo.csv \
     ${XNAT_ARCHIVE_MAS}/*
 
   xnat-extract.py \
     --blacklist ${PROJECTDIR}/metadata/blacklist.csv \
     --datadir ${PROJECTDIR}/data \
-    --exportinfo ${PROJECTDIR}/metadata/exportinfo-NKI.csv \
+    --exportinfo ${PROJECTDIR}/metadata/exportinfo.csv \
     ${XNAT_ARCHIVE_NKI}/*
 
   xnat-extract.py \
     --blacklist ${PROJECTDIR}/metadata/blacklist.csv \
     --datadir ${PROJECTDIR}/data \
-    --exportinfo ${PROJECTDIR}/metadata/exportinfo-PMC.csv \
+    --exportinfo ${PROJECTDIR}/metadata/exportinfo.csv \
     ${XNAT_ARCHIVE_PMC}/*
 
   module unload slicer/4.4.0 mricron/0.20140804 minc-toolkit/1.0.01
 
-  message "Checking DICOM headers... "
-  dm-check-headers.py ${CMH_STANDARD} ${PROJECTDIR}/dcm/SPN01_CMH_*
+  #message "Checking DICOM headers... "
+  #dm-check-headers.py --ignore-headers InversionTime,StackID ${CMH_STANDARD} ${PROJECTDIR}/logs/header-compare ${PROJECTDIR}/metadata/checklist.yaml ${PROJECTDIR}/dcm/SPN01_CMH_*
   #dm-check-headers.py ${MAS_STANDARD} ${PROJECTDIR}/dcm/SPN01_MAS_*
   #dm-check-headers.py ${NKI_STANDARD} ${PROJECTDIR}/dcm/SPN01_NKI_*
   #dm-check-headers.py ${PMC_STANDARD} ${PROJECTDIR}/dcm/SPN01_PMC_*
@@ -95,7 +98,7 @@ function message () { [[ "$args" =~ "--quiet" ]] || echo "$(date): $1"; }
 
   message "Generating QC documents..."
   (module load AFNI/2014.12.16 FSL/5.0.7 matlab/R2013b_concurrent
-  qc.py --datadir ${PROJECTDIR}/data/ --qcdir ${PROJECTDIR}/qc
+  qc.py --datadir ${PROJECTDIR}/data/ --qcdir ${PROJECTDIR}/qc --dbdir ${PROJECTDIR}/qc
   )
 
   message "Updating QC checklist..."
@@ -126,6 +129,11 @@ function message () { [[ "$args" =~ "--quiet" ]] || echo "$(date): $1"; }
   #   --datadir ${PROJECTDIR}/data/ \
   #   --outputdir ${PROJECTDIR}/data/dtifit
   # module unload FSL/5.0.7
+
+  # message "Running enignmaDTI..."
+  # dm-proc-enigmadti.py --calc-all \
+  #  --QC-transfer ${PROJECTDIR}/metadata/checklist.csv \
+  #  ${PROJECTDIR}/data/dtifit ${PROJECTDIR}/data/enigmaDTI
 
   message "Done."
 } | tee -a ${PROJECTDIR}/logs/run-all-${DATESTAMP}.log

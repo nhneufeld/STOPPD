@@ -1,0 +1,12 @@
+pattern                   tag         export_mnc  export_nii  export_nrrd  export_dcm  count
+DTI-60|60.5$|^DTI.60dir$  DTI60-1000  no          yes         no           yes         1,1
+TE6.5                     FMAP-6.5    no          yes         no           yes         1,0
+TE8.5                     FMAP-8.5    no          yes         no           yes         1,0
+T1|MPRAGE|mprage          T1          no          yes         no           yes         1,1
+T2.DE|pd.t2               PDT2        no          yes         no           yes         1,1
+TSE                       PD          no          yes         no           yes         1,0
+FLAIR|flair               FLAIR       no          yes         no           yes         1,1
+MRS.*DLPFC                MRS-DLPFC   no          yes         no           no          1,1
+MRS.*sgACC                MRS-sgACC   no          yes         no           no          1,1
+(?i)Rest|rest             RST         no          yes         no           yes         1,1
+B0-Map|field              FMAP        no          yes         no           yes         0,1
